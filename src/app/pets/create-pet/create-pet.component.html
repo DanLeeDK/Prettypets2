@@ -1,0 +1,31 @@
+<form enctype="multipart/form-data">
+
+    <label for="name" >Name:</label>
+    <input [(ngModel)]="pet.name" class="form-control"
+     type="text" name="name" required #name="ngModel">
+
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+      <div *ngIf="name.errors.required"><!--Virker-->
+        <label id="error">Name is required.</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Town:</label>
+      <input [(ngModel)]="pet.town" name="town" type="text" class="form-control" id="town">
+    </div>
+    <div class="form-group">
+      <label>Age:</label>
+      <input [(ngModel)]="pet.age" name="age" type="number" class="form-control" id="age">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox">Dog</label>
+      <label><input type="checkbox">Cat</label>
+    </div>
+    <input type="file" name="PetImage" multiple style="padding-top: 1cm; padding-bottom: 0.5cm"  #PetImage  placeholder="Upload files..." />
+
+    <button type="button" class="btn btn-outline-primary" [disabled]="name.errors" (click)="savePet(pet)">Submit</button>
+  </form>
+
+
+

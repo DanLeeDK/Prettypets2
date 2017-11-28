@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-md bg-faded navbar-light">
+  <a id="brand" class="navbar-brand" href="#">Pretty Pets</a>
+  <br/>
+  <button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+<div class="container">
+  <br/>
+    <div id="navbar" class="collapse navbar-collapse" [collapse]="isCollapsed">
+      <ul class='nav navbar-nav'>
+        <li *ngIf=!showNavbar class="nav-item">
+          <a href="#" class="navbar-brand text-primary" id="logo">Pretty Pets</a>
+        </li>
+          <li><a href="#">Home</a></li>
+          <li *ngIf=showNavbar class="nav-item"><a class="nav-link" [routerLink]="['/createpet']">Add new pet</a></li>
+          <li *ngIf=showNavbar class="nav-item"><a class="nav-link" [routerLink]="['/mypets']">My Pets</a></li>
+          <li *ngIf=showNavbar class="nav-item"><a class="nav-link" [routerLink]="['/petslist']">All Pets</a></li>
+          <li *ngIf=!showNavbar class="nav-item"><a class="nav-link" [routerLink]="['/login']">Log in</a></li>
+          <li *ngIf=showNavbar class="nav-item"><a class="nav-link" (click)=logout()>Log out</a></li>
+      </ul>
+    <ul class="nav navbar-nav navbar-right"></ul>
+  </div>
+</div>
+</nav>

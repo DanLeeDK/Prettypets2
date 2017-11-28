@@ -1,0 +1,53 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+      {{pageTitle}}
+  </div>
+  <div class="panel-body"  >
+      <div class="row" >
+          <img src={{img}}
+               class="img-responsive img-rounded center-block"
+               style="max-height:300px;padding-bottom:50px"/>
+      </div>
+
+      <div class="container">
+      <ngb-accordion (panelChange)="beforeChange($event)">
+          <ngb-panel id="preventchange-1" title="What is Pretty Pets?">
+            <ng-template ngbPanelContent>
+                <p id="infoDropdown" align="left">
+              Pretty pets is a pet agency, who collects all cute and beautiful pets and
+              gives them a chance make some earnings by participating in commercials,
+              photoshoot, events and more.
+                </p>
+            </ng-template>
+          </ngb-panel>
+          <ngb-panel id="preventchange-2" title="How does it work?">
+            <ng-template ngbPanelContent>
+                <p id="infoDropdown" align="left">
+              Create an account for you and your pet. Take some good pictures that shows
+              the looks and talents of your pet. Companies in search for a pet like yours
+              will then contact you and give you an offer for a job or you can preset your
+              asking price.
+            </p>
+            </ng-template>
+          </ngb-panel>
+          <ngb-panel id="preventchange-3" title="How much can my pet earn?">
+            <ng-template ngbPanelContent>
+                <p id="infoDropdown" align="left">
+              It is up to you to set an asking price or accept what a company is willing
+              to offer you. Normally it's a good idea to start low and see how the demand
+              for you pet is.
+            </p>
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+      </div>
+
+      <br/>
+      <br/>
+      <footer class="row"  >
+          <div class="text-center">Developed by:</div>
+          <h3 class="text-center">Dan Lee</h3>
+
+        </footer>
+  </div>
+</div>
